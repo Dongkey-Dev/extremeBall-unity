@@ -1,11 +1,13 @@
+using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ShootToMouse : MonoBehaviour
 {
+    public static Vector3 PlayerVelocity;
     Vector3 posInScreen;
     void Update(){
+        PlayerVelocity = GetComponent<Rigidbody2D>().velocity;
         if (Input.GetMouseButtonDown(0)){
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             posInScreen = Camera.main.WorldToScreenPoint(transform.position);
@@ -13,16 +15,14 @@ public class ShootToMouse : MonoBehaviour
             float distance = Vector3.Distance(posInScreen, Input.mousePosition);
             dirToMouse.Normalize();
             distance = Mathf.Max(200, distance);
-            GetComponent<Rigidbody2D>().AddForce(dirToMouse * distance * 4);
-            Debug.Log(posInScreen);
-            Debug.Log(Input.mousePosition);
+            GetComponent<Rigidbody2D>().AddForce(dirToMouse * distance * 6);
         }
     }
     private void OnTriggerEnter2D(Collider2D score)
     {
         if(score.tag == "Myscore"){
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-10,10), 80, 0)) * 10);
+            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-50,50), 80, 0)) * 10);
         }
     }    
 }

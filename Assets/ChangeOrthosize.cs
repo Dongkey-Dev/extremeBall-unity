@@ -5,16 +5,19 @@ using Cinemachine;
 
 public class ChangeOrthosize : MonoBehaviour
 {
-    public float zoomSpeed = 1;
-    public float targetOrtho;
-    public float smoothSpeed = 2.0f;
-    public float minOrtho = 1.0f;
-    public float maxOrtho = 20.0f;
+    float PlayerMagnitude;
     public CinemachineVirtualCamera vcam;
 
     void Start(){
-        targetOrtho = vcam.m_Lens.OrthographicSize;
+        vcam.m_Lens.OrthographicSize = 8;
     }    
-    void Update(){
+    void FixedUpdate(){
+        PlayerMagnitude = ShootToMouse.PlayerVelocity.magnitude;
+        if(PlayerMagnitude > 15){
+            vcam.m_Lens.OrthographicSize = Mathf.Max(8, Mathf.Min(vcam.m_Lens.OrthographicSize+0.2f, 20));
+        }
+        else{
+            vcam.m_Lens.OrthographicSize = Mathf.Max(8, Mathf.Min(vcam.m_Lens.OrthographicSize-0.1f, 20));
+        }
     }
 }
