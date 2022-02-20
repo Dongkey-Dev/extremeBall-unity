@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ChangeOrthosize : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float zoomSpeed = 1;
+    public float targetOrtho;
+    public float smoothSpeed = 2.0f;
+    public float minOrtho = 1.0f;
+    public float maxOrtho = 20.0f;
+    public CinemachineVirtualCamera vcam;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start(){
+        targetOrtho = vcam.m_Lens.OrthographicSize;
+    }    
+    void Update(){
     }
 }
