@@ -13,7 +13,7 @@ public class ChangeOrthosize : MonoBehaviour
     }    
     void FixedUpdate(){
         PlayerMagnitude = ShootToMouse.PlayerVelocity.magnitude;
-        if(PlayerMagnitude > 15){
+        if(PlayerMagnitude > 12){
             vcam.m_Lens.OrthographicSize = Mathf.Max(8, Mathf.Min(vcam.m_Lens.OrthographicSize+0.2f, 20));
         }
         else{
