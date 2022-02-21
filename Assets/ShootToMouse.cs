@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class ShootToMouse : MonoBehaviour
 {
+    float lastSpeed;
     public static Vector3 PlayerVelocity;
     Vector3 posInScreen;
     void Update(){
@@ -21,8 +22,9 @@ public class ShootToMouse : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D score)
     {
         if(score.tag == "Myscore"){
+            lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-50,50), 80, 0)) * 10);
+            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-50,50), 80, 0)) * lastSpeed/2);
         }
     }    
 }
