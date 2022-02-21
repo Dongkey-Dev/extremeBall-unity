@@ -19,18 +19,20 @@ public class DrawLineToMouse : MonoBehaviour
      {
          if (Input.GetMouseButtonDown(0))
          {
-            posInScreen = Camera.main.WorldToScreenPoint(transform.position);
-            Vector3 dirToMouse = Input.mousePosition - posInScreen;
-            _initialPosition = dirToMouse;
+            // posInScreen = Camera.main.WorldToScreenPoint(transform.position);
+            // Vector3 dirToMouse = Input.mousePosition - posInScreen;
+            _initialPosition = transform.position;
             _lineRenderer.SetPosition(0, _initialPosition);
             _lineRenderer.SetVertexCount(1);
             _lineRenderer.enabled = true;
          } 
          else if (Input.GetMouseButton(0))
          {
-             _currentPosition = GetCurrentMousePosition().GetValueOrDefault();
-             _lineRenderer.SetVertexCount(2);
-             _lineRenderer.SetPosition(1, _currentPosition);
+            _currentPosition = GetCurrentMousePosition().GetValueOrDefault();
+            _initialPosition = transform.position;
+            _lineRenderer.SetVertexCount(2);
+            _lineRenderer.SetPosition(0, _initialPosition);
+            _lineRenderer.SetPosition(1, _currentPosition);
  
          } 
          else if (Input.GetMouseButtonUp(0))

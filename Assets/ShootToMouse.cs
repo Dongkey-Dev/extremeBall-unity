@@ -9,7 +9,7 @@ public class ShootToMouse : MonoBehaviour
     Vector3 posInScreen;
     void Update(){
         PlayerVelocity = GetComponent<Rigidbody2D>().velocity;
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonUp(0)){
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             posInScreen = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 dirToMouse = Input.mousePosition - posInScreen;
