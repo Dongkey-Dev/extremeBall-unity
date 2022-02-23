@@ -44,7 +44,7 @@ public class DrawLineToMouse : MonoBehaviour
              _lineRenderer.enabled = false;
          }
      }
-     private Vector3? GetCurrentMousePosition()
+     public Vector3? GetCurrentMousePosition()
      {
          var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
          var plane = new Plane(Vector3.forward, Vector3.zero);
