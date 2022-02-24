@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using PlayerMoudle;
 public class DrawLineToMouse : MonoBehaviour
 {
      private LineRenderer _lineRenderer;
@@ -32,7 +32,7 @@ public class DrawLineToMouse : MonoBehaviour
          } 
          else if (Input.GetMouseButton(0))
          {
-            _currentPosition = GetCurrentMousePosition().GetValueOrDefault();
+            _currentPosition = pm.GetCurrentMousePosition().GetValueOrDefault();
             _initialPosition = transform.position;
             _lineRenderer.positionCount = 2;
             _lineRenderer.SetPosition(0, _initialPosition);
@@ -43,18 +43,5 @@ public class DrawLineToMouse : MonoBehaviour
          {
              _lineRenderer.enabled = false;
          }
-     }
-     public Vector3? GetCurrentMousePosition()
-     {
-         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-         var plane = new Plane(Vector3.forward, Vector3.zero);
- 
-         float rayDistance;
-         if (plane.Raycast(ray, out rayDistance))
-         {
-             return ray.GetPoint(rayDistance);
-             
-         }
-         return null;
      }
  }
