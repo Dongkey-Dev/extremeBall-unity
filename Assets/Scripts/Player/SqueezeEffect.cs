@@ -16,7 +16,8 @@ public class SqueezeEffect : MonoBehaviour
             Vector3 _currentPosition = pm.GetCurrentMousePosition().GetValueOrDefault();
             Vector3 _initialPosition = transform.position;            
             float distance = GetDistance();
-            transform.localScale = orginalScale - new Vector3(10*distance,0,0);
+            distance = Mathf.Min(pressMax, distance)/2000;
+            transform.localScale = orginalScale - new Vector3(Mathf.Min(10*distance, 0.5f),0,0);
             var degrees = pm.AngleInDeg(_currentPosition, _initialPosition);
             transform.eulerAngles = Vector3.forward * degrees;
         }
@@ -32,7 +33,7 @@ public class SqueezeEffect : MonoBehaviour
             var degrees = pm.AngleInDeg(beforeBallPos, currentBallPos);
             float distance = Vector3.Distance(beforeBallPos, currentBallPos);
             transform.eulerAngles = Vector3.forward * degrees;
-            transform.localScale = orginalScale - new Vector3(0,distance/5,0);   
+            transform.localScale = orginalScale - new Vector3(0,Mathf.Min(distance/5, 0.6f),0);   
             beforeBallPos = currentBallPos;
             Debug.Log(distance);
         }
@@ -41,7 +42,6 @@ public class SqueezeEffect : MonoBehaviour
         Vector3 _currentPosition = pm.GetCurrentMousePosition().GetValueOrDefault();
         Vector3 _initialPosition = transform.position;
         float distance = Vector3.Distance(_currentPosition, _initialPosition);
-        distance = Mathf.Min(pressMax, distance)/2000;  
         return distance;
     }
 }
