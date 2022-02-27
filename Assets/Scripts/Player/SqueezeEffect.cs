@@ -35,7 +35,6 @@ public class SqueezeEffect : MonoBehaviour
             transform.eulerAngles = Vector3.forward * degrees;
             transform.localScale = orginalScale - new Vector3(0,Mathf.Min(distance/5, 0.6f),0);   
             beforeBallPos = currentBallPos;
-            Debug.Log(distance);
         }
     }
     public float GetDistance(){

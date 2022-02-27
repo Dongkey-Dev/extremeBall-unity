@@ -5,6 +5,10 @@ using UnityEngine;
 namespace PlayerMoudle{
     public class pm : MonoBehaviour
     {
+        public static Vector3 playerPosition;
+        void Update(){
+            playerPosition = transform.position;
+        }
         public static Vector3? GetCurrentMousePosition()
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
