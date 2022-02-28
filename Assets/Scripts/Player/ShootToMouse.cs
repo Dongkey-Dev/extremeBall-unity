@@ -6,15 +6,9 @@ public class ShootToMouse : MonoBehaviour
 {
     float lastSpeed;
     public static Vector3 PlayerVelocity;
-    public static Vector3 PlayerPosition;
-
-    void Start(){
-        PlayerPosition = GetComponent<Rigidbody2D>().position;
-    }
     Vector3 posInScreen;
     void Update(){
         PlayerVelocity = GetComponent<Rigidbody2D>().velocity;
-        PlayerPosition = GetComponent<Rigidbody2D>().position;
         if (Input.GetMouseButtonUp(0)){
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             posInScreen = Camera.main.WorldToScreenPoint(transform.position);
@@ -31,6 +25,7 @@ public class ShootToMouse : MonoBehaviour
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-50,50), 80, 0)) * lastSpeed/4);
+            healthPoint.rectTransform.sizeDelta = new Vector2(200,20);
         }
     }    
 }
