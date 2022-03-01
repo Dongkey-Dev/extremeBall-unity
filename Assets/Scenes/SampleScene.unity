@@ -638,8 +638,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586955232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 354.9189, y: 236.8859, z: 238}
-  m_LocalScale: {x: 1113.3823, y: 480.0849, z: 1}
+  m_LocalPosition: {x: 841, y: 473, z: 238}
+  m_LocalScale: {x: 1725.6313, y: 996.1762, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -656,6 +656,7 @@ GameObject:
   - component: {fileID: 849528396}
   - component: {fileID: 849528398}
   - component: {fileID: 849528397}
+  - component: {fileID: 849528399}
   m_Layer: 5
   m_Name: healthBar
   m_TagString: Untagged
@@ -681,7 +682,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 30}
+  m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849528397
 MonoBehaviour:
@@ -721,6 +722,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849528395}
   m_CullTransparentMesh: 1
+--- !u!114 &849528399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849528395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778a43e6525824b56a567b6624f9b568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920585994
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -142}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1004291981
@@ -1281,7 +1294,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.634349, y: 1}
+    m_SensorSize: {x: 1.5758158, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1371,7 +1384,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 30}
+  m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071089001
 MonoBehaviour:
