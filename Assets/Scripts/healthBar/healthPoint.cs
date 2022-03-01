@@ -8,15 +8,9 @@ public class healthPoint : MonoBehaviour
     public static RectTransform rectTransform;
     void Start(){
         rectTransform = GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(playerHP.maxHP, 20);
     }
     void FixedUpdate(){
-        if(rectTransform.sizeDelta.x <= 0.0f){
-        } 
-        if(Input.GetMouseButton(0)){
-            rectTransform.sizeDelta -= new Vector2(0.5f,0);
-        }
-        else{
-            rectTransform.sizeDelta -= new Vector2(0.1f,0);
-        }
+        rectTransform.sizeDelta = new Vector2(playerHP.currentHP, 20);
     }
 }
