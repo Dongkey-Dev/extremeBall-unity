@@ -25,7 +25,6 @@ public class ShootToMouse : MonoBehaviour
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-50,50), 80, 0)) * lastSpeed/4);
-            healthPoint.rectTransform.sizeDelta = new Vector2(200,20);
         }
     }    
 }

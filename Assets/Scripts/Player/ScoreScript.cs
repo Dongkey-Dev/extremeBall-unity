@@ -22,6 +22,7 @@ public class ScoreScript : MonoBehaviour
             ScoreNum += 100;
             Destroy(score.gameObject);
             MyscoreText.text = "Score : " + ScoreNum;
+            playerHP.currentHP = playerHP.maxHP;
         }
     }
 }
