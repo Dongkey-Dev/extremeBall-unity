@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Myscore
+  - yellow_score
+  - green_ball
+  - red_score
   layers:
   - Default
   - TransparentFX
