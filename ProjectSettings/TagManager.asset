@@ -8,6 +8,7 @@ TagManager:
   - yellow_score
   - green_ball
   - red_score
+  - orange_score
   layers:
   - Default
   - TransparentFX
