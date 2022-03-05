@@ -30,7 +30,7 @@ public class ScoreScript : MonoBehaviour
             MyscoreText.text = "Score : " + ScoreNum;
             playerStatus.currentHP = playerStatus.maxHP;
         }        
-        else if(score.tag == "green_ball"){
+        else if(score.tag == "red_ball"){
             playerStatus.currentHP = 0.0f;
         }        
     }
