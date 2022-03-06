@@ -9,6 +9,7 @@ TagManager:
   - green_ball
   - red_score
   - orange_score
+  - red_ball
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Post Processing
   - 
   - 
   - 
