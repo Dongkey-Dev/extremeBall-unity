@@ -12,7 +12,6 @@ public class playerStatus : MonoBehaviour
         currentHP = 200.0f;
     }
     void FixedUpdate(){
-        Debug.Log(maxHP);
         if(this.transform.position.x >= 1050 ){
             this.transform.position = new Vector3(-1050,this.transform.position.y, this.transform.position.z);
         } else if(this.transform.position.x <= -1050 ){

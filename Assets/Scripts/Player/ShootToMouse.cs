@@ -30,6 +30,7 @@ public class ShootToMouse : MonoBehaviour
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-300,300), 0)) * lastSpeed/2);
+            Debug.Log(lastSpeed);
         }
     }    
 }

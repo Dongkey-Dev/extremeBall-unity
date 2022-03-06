@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 1398299585}
   m_Layer: 0
   m_Name: orange_score
-  m_TagString: yellow_score
+  m_TagString: orange_score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
