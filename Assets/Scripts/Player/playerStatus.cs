@@ -23,7 +23,7 @@ public class playerStatus : MonoBehaviour
         }
         if(currentHP <= 0.0f){
             Destroy(this.gameObject);
-            gamecontroller.GameOver(10);
+            gamecontroller.GameOver();
         } 
         if(Input.GetMouseButton(0)){
             currentHP -= 1.0f;

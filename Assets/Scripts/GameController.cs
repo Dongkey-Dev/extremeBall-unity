@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public Gameover gameover;
-    public void GameOver(int end_score){
-        end_score = 0;
+    public ScoreScript scorescript;
+    public void GameOver(){
+        int end_score = scorescript.GetScoreNum(); 
+        Debug.Log(end_score);
         gameover.Setup(end_score);
     }
 }

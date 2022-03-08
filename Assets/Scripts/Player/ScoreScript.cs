@@ -7,6 +7,11 @@ public class ScoreScript : MonoBehaviour
 {
     public Text MyscoreText;
     private int ScoreNum;
+    public GameController gamecontroller;
+
+    public int GetScoreNum(){
+        return ScoreNum;
+    }
 
     // Start is called before the first frame update
     void Start()
