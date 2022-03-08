@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public Gameover gameover;
-    int end_score;
-    public void GameOver(){
+    public void GameOver(int end_score){
+        end_score = 0;
         gameover.Setup(end_score);
     }
 }

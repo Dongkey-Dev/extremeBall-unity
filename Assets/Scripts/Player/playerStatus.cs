@@ -7,6 +7,7 @@ public class playerStatus : MonoBehaviour
 {
     public static float maxHP;
     public static float currentHP;
+    public GameController gamecontroller;
     void Start(){
         maxHP = 200.0f;
         currentHP = 200.0f;
@@ -22,6 +23,7 @@ public class playerStatus : MonoBehaviour
         }
         if(currentHP <= 0.0f){
             Destroy(this.gameObject);
+            gamecontroller.GameOver(10);
         } 
         if(Input.GetMouseButton(0)){
             currentHP -= 1.0f;
