@@ -27,7 +27,7 @@ public class ScoreScript : MonoBehaviour
             ScoreNum += 100;
             Destroy(score.gameObject);
             MyscoreText.text = "Score : " + ScoreNum;
-            playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+30, playerStatus.maxHP);
+            playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
         }
         else if(score.tag == "orange_score"){
             ScoreNum += 300;
