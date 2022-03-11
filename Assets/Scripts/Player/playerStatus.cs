@@ -18,9 +18,6 @@ public class playerStatus : MonoBehaviour
         } else if(this.transform.position.x <= -1050 ){
             this.transform.position = new Vector3(1050,this.transform.position.y, this.transform.position.z);
         }
-        if(this.transform.position.y <= -4.7){
-            currentHP = 0;
-        }
         if(currentHP <= 0.0f){
             Destroy(this.gameObject);
             gamecontroller.GameOver();

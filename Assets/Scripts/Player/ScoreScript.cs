@@ -12,15 +12,12 @@ public class ScoreScript : MonoBehaviour
     public int GetScoreNum(){
         return ScoreNum;
     }
-
-    // Start is called before the first frame update
     void Start()
     {
         ScoreNum = 0; 
         MyscoreText.text = "Score : " + ScoreNum;
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D score)
     {
         if(score.tag == "yellow_score"){
@@ -35,7 +32,7 @@ public class ScoreScript : MonoBehaviour
             MyscoreText.text = "Score : " + ScoreNum;
             playerStatus.currentHP = playerStatus.maxHP;
         }        
-        else if(score.tag == "red_ball"){
+        else if(score.tag == "red_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
         }        
     }
