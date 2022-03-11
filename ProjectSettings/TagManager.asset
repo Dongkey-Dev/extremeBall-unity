@@ -10,6 +10,7 @@ TagManager:
   - red_score
   - orange_score
   - red_ball
+  - Lava
   layers:
   - Default
   - TransparentFX

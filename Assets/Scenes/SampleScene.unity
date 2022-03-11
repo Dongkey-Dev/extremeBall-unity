@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 276532121}
   m_Layer: 0
   m_Name: Lava
-  m_TagString: Untagged
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -354,10 +354,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276532119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1505,7 +1505,6 @@ GameObject:
   - component: {fileID: 1071154601}
   - component: {fileID: 1071154600}
   - component: {fileID: 1071154602}
-  - component: {fileID: 1071154603}
   m_Layer: 0
   m_Name: yellow_score
   m_TagString: yellow_score
@@ -1596,20 +1595,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1071154603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071154599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8583eefb26d14f8e8f1b6c7fa379de2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyscoreText: {fileID: 1147899606}
-  gamecontroller: {fileID: 0}
 --- !u!1 &1147899605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1781,6 @@ GameObject:
   - component: {fileID: 1398299584}
   - component: {fileID: 1398299587}
   - component: {fileID: 1398299586}
-  - component: {fileID: 1398299585}
   m_Layer: 0
   m_Name: orange_score
   m_TagString: orange_score
@@ -1819,20 +1803,6 @@ Transform:
   m_Father: {fileID: 1062403831}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1398299585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398299583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8583eefb26d14f8e8f1b6c7fa379de2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyscoreText: {fileID: 1147899606}
-  gamecontroller: {fileID: 0}
 --- !u!58 &1398299586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1912,7 +1882,6 @@ GameObject:
   - component: {fileID: 1689725714}
   - component: {fileID: 1689725717}
   - component: {fileID: 1689725716}
-  - component: {fileID: 1689725715}
   m_Layer: 0
   m_Name: red_ball
   m_TagString: red_ball
@@ -1935,20 +1904,6 @@ Transform:
   m_Father: {fileID: 1062403831}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1689725715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689725713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8583eefb26d14f8e8f1b6c7fa379de2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyscoreText: {fileID: 1147899606}
-  gamecontroller: {fileID: 0}
 --- !u!58 &1689725716
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2196,7 +2151,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6813084, y: 1}
+    m_SensorSize: {x: 1.7451404, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
