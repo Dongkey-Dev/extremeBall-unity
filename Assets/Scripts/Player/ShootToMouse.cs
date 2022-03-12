@@ -5,8 +5,12 @@ using UnityEngine;
 public class ShootToMouse : MonoBehaviour
 {
     float lastSpeed;
+    public int force;
     public static Vector3 PlayerVelocity;
     Vector3 posInScreen;
+    void Start(){
+        force = 2;
+    }
     void Update(){
         PlayerVelocity = GetComponent<Rigidbody2D>().velocity;
         if (Input.GetMouseButtonUp(0)){
@@ -15,8 +19,8 @@ public class ShootToMouse : MonoBehaviour
             Vector3 dirToMouse = Input.mousePosition - posInScreen;
             float distance = Vector3.Distance(posInScreen, Input.mousePosition); 
             dirToMouse.Normalize();
-            distance = Mathf.Max(200, distance);
-            GetComponent<Rigidbody2D>().AddForce(dirToMouse * distance * 6);
+            distance = Mathf.Max(400, distance * force);
+            GetComponent<Rigidbody2D>().AddForce(dirToMouse * distance);
         }
     }
     private void OnTriggerEnter2D(Collider2D score)

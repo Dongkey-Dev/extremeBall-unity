@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(GameOverAfterDelay());
     }
     private IEnumerator GameOverAfterDelay(){
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         int end_score = scorescript.GetScoreNum(); 
         Debug.Log(end_score);
         gameover.Setup(end_score);
