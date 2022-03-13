@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b75335362c59411d8a6153f2908e95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberToSpawn: 2000
+  numberToSpawn: 3000
   spawnPool:
   - {fileID: 1071154599}
   quad: {fileID: 586955232}
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b75335362c59411d8a6153f2908e95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberToSpawn: 250
+  numberToSpawn: 400
   spawnPool:
   - {fileID: 1398299583}
   quad: {fileID: 586955232}
