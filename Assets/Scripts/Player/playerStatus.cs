@@ -20,6 +20,7 @@ public class playerStatus : MonoBehaviour
         }
         if(currentHP <= 0.0f){
             Destroy(this.gameObject);
+            SoundManagerScript.playSound("playerDestroyedSound");
             gamecontroller.GameOver();
         } 
         if(Input.GetMouseButton(0)){
