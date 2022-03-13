@@ -34,6 +34,7 @@ public class ScoreScript : MonoBehaviour
         }        
         else if(score.tag == "red_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
-        }        
+        }
+        CameraShake.Instance.ShakeCamera(10f, .2f);
     }
 }

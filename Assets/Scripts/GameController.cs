@@ -12,7 +12,6 @@ public class GameController : MonoBehaviour
     private IEnumerator GameOverAfterDelay(){
         yield return new WaitForSeconds(.5f);
         int end_score = scorescript.GetScoreNum(); 
-        Debug.Log(end_score);
         gameover.Setup(end_score);
     }
 }
