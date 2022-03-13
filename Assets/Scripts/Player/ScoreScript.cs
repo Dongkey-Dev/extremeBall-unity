@@ -25,15 +25,18 @@ public class ScoreScript : MonoBehaviour
             Destroy(score.gameObject);
             MyscoreText.text = "Score : " + ScoreNum;
             playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
+            SoundManagerScript.playSound("scoreBallSound");
         }
         else if(score.tag == "orange_score"){
             ScoreNum += 300;
             Destroy(score.gameObject);
             MyscoreText.text = "Score : " + ScoreNum;
             playerStatus.currentHP = playerStatus.maxHP;
+            SoundManagerScript.playSound("scoreBallSound");
         }        
         else if(score.tag == "red_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
+            SoundManagerScript.playSound("playerDestroyedSound");
         }
         CameraShake.Instance.ShakeCamera(10f, .2f);
     }

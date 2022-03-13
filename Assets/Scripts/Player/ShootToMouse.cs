@@ -21,6 +21,7 @@ public class ShootToMouse : MonoBehaviour
             dirToMouse.Normalize();
             distance = Mathf.Max(400, distance * force);
             GetComponent<Rigidbody2D>().AddForce(dirToMouse * distance);
+            SoundManagerScript.playSound("playerJumpSound");
         }
     }
     private void OnTriggerEnter2D(Collider2D score)
