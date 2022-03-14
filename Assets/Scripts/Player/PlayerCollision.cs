@@ -7,7 +7,7 @@ public class PlayerCollision : MonoBehaviour
 {
     public Text MyscoreText;
     private int ScoreNum;
-    public GameController gameController;
+    public ParticleSystem scoreEffect;
 
     public int GetScoreNum(){
         return ScoreNum;
@@ -22,15 +22,17 @@ public class PlayerCollision : MonoBehaviour
     {
         if(score.tag == "yellow_score"){
             ScoreNum += 100;
-            Destroy(score.gameObject);
             MyscoreText.text = "Score : " + ScoreNum;
+            Instantiate(scoreEffect, score.transform.position, score.transform.rotation);
+            Destroy(score.gameObject);
             playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
             SoundManagerScript.playSound("scoreBallSound");
         }
         else if(score.tag == "orange_score"){
             ScoreNum += 300;
-            Destroy(score.gameObject);
             MyscoreText.text = "Score : " + ScoreNum;
+            Instantiate(scoreEffect, score.transform.position, score.transform.rotation);
+            Destroy(score.gameObject);            
             playerStatus.currentHP = playerStatus.maxHP;
             SoundManagerScript.playSound("scoreBallSound");
         }        
