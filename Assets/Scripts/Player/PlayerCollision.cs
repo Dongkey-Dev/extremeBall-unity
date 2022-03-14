@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,9 @@ public class PlayerCollision : MonoBehaviour
 {
     public Text MyscoreText;
     private int ScoreNum;
-    public ParticleSystem scoreEffect;
-
+    public ParticleSystem ps;
+    public ParticleSystem.MainModule ps_main;
+    
     public int GetScoreNum(){
         return ScoreNum;
     }
@@ -16,6 +18,7 @@ public class PlayerCollision : MonoBehaviour
     {
         ScoreNum = 0; 
         MyscoreText.text = "Score : " + ScoreNum;
+        ps_main = ps.main;
     }
 
     private void OnTriggerEnter2D(Collider2D score)
@@ -23,7 +26,7 @@ public class PlayerCollision : MonoBehaviour
         if(score.tag == "yellow_score"){
             ScoreNum += 100;
             MyscoreText.text = "Score : " + ScoreNum;
-            Instantiate(scoreEffect, score.transform.position, score.transform.rotation);
+            ExplodeScore(score.transform.position, score.transform.rotation);
             Destroy(score.gameObject);
             playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
             SoundManagerScript.playSound("scoreBallSound");
@@ -31,7 +34,7 @@ public class PlayerCollision : MonoBehaviour
         else if(score.tag == "orange_score"){
             ScoreNum += 300;
             MyscoreText.text = "Score : " + ScoreNum;
-            Instantiate(scoreEffect, score.transform.position, score.transform.rotation);
+            ExplodeScore(score.transform.position, score.transform.rotation);
             Destroy(score.gameObject);            
             playerStatus.currentHP = playerStatus.maxHP;
             SoundManagerScript.playSound("scoreBallSound");
@@ -40,5 +43,11 @@ public class PlayerCollision : MonoBehaviour
             playerStatus.currentHP = 0.0f;
         }
         CameraShake.Instance.ShakeCamera(10f, .2f);
+    }
+
+    void ExplodeScore(Vector3 pos, Quaternion rot)
+    {
+        ps_main.startSpeed = ShootToMouse.PlayerVelocity.magnitude;
+        Instantiate(ps, pos, rot);
     }
 }
