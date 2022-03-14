@@ -87,7 +87,7 @@ public class PlayerCollision : MonoBehaviour
 
             case "orange":
                 ps_main.startColor = new ParticleSystem.MinMaxGradient(
-                    new Vector4(1,(float)108/255,(float)61/255,1), 
+                    new Vector4(1,(float)215/255,(float)0/255,1), 
                     new Vector4((float)229/255,(float)121/255,0,1)
                 );
                 break;
