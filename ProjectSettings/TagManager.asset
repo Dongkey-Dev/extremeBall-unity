@@ -11,6 +11,7 @@ TagManager:
   - orange_score
   - red_ball
   - Lava
+  - purple_score
   layers:
   - Default
   - TransparentFX
