@@ -20,6 +20,7 @@ public class playerStatus : MonoBehaviour
         }
         if(currentHP <= 0.0f){
             Destroy(this.gameObject);
+            TimeManager.GetBackTime();
             SoundManagerScript.playSound("playerDestroyedSound");
             gamecontroller.GameOver();
         } 

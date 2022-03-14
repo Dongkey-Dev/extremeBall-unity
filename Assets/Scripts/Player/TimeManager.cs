@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour
         Time.timeScale = slowdownFactor;
         Time.fixedDeltaTime = Time.timeScale * .02f;
     }
-    public void GetBackTime(){
+    public static void GetBackTime(){
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.timeScale * .02f;
     }
