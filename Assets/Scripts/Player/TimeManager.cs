@@ -17,9 +17,11 @@ public class TimeManager : MonoBehaviour
     public void DoSlowmotion(){
         Time.timeScale = slowdownFactor;
         Time.fixedDeltaTime = Time.timeScale * .02f;
+        MusicPlayer.audioLowPassFilter.cutoffFrequency = 500;
     }
     public static void GetBackTime(){
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.timeScale * .02f;
+        MusicPlayer.audioLowPassFilter.cutoffFrequency = 5000;
     }
 }

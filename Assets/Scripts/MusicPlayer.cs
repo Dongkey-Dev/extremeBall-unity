@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
-    static MusicPlayer instance = null;
+    public static MusicPlayer instance = null;
+    public static AudioLowPassFilter audioLowPassFilter;
+
+    void Start()
+    {
+        audioLowPassFilter = GetComponent<AudioLowPassFilter>();
+    }
     void Awake()
     {
         if (instance != null)
