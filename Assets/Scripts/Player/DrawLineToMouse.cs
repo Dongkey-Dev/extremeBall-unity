@@ -5,14 +5,16 @@ using PlayerMoudle;
 public class DrawLineToMouse : MonoBehaviour
 {
      private LineRenderer _lineRenderer;
-     public Color c1 = Color.white;
-     public Color c2 = new Color(1, 1, 1, 0.9f);
+     public Color c1;
+     public Color c2;
+     public Material mat;
      public void Start()
      {
          _lineRenderer = gameObject.AddComponent<LineRenderer>();
+         _lineRenderer.sortingLayerName = "Foreground";
+         _lineRenderer.material = mat;
          _lineRenderer.startWidth = 0.4f;
          _lineRenderer.endWidth = 0.2f;
-         _lineRenderer.material.color = Color.white;
          _lineRenderer.startColor = c1;
          _lineRenderer.endColor = c2;
          _lineRenderer.enabled = false;
