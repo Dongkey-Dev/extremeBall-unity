@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreScript : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
     public Text MyscoreText;
     private int ScoreNum;
-    public GameController gamecontroller;
+    public GameController gameController;
 
     public int GetScoreNum(){
         return ScoreNum;
@@ -36,7 +36,6 @@ public class ScoreScript : MonoBehaviour
         }        
         else if(score.tag == "red_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
-            SoundManagerScript.playSound("playerDestroyedSound");
         }
         CameraShake.Instance.ShakeCamera(10f, .2f);
     }
