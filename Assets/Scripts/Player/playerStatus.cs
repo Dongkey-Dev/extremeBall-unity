@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ public class playerStatus : MonoBehaviour
             this.transform.position = new Vector3(1050,this.transform.position.y, this.transform.position.z);
         }
         if(currentHP <= 0.0f){
+            PlayerCollision playerCollision = this.gameObject.GetComponent<PlayerCollision>();
+            playerCollision.ExplodeScore("player", this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             TimeManager.GetBackTime();
             SoundManagerScript.playSound("playerDestroyedSound");

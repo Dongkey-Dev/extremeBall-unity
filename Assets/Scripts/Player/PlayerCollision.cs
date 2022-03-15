@@ -82,7 +82,7 @@ public class PlayerCollision : MonoBehaviour
         return gradient;
     }    
 
-    void ExplodeScore(string color, Vector3 pos, Quaternion rot)
+    public void ExplodeScore(string color, Vector3 pos, Quaternion rot)
     {
         ps_main.startSpeed = ShootToMouse.PlayerVelocity.magnitude;
         switch(color)
@@ -113,7 +113,14 @@ public class PlayerCollision : MonoBehaviour
                     new Vector4(1,(float)73/255,(float)0/255,1), 
                     new Vector4((float)255/255,(float)0/255,(float)170/255,1)
                 );
-                break;                
+                break;          
+
+            case "player":
+                ps_main.startColor = new ParticleSystem.MinMaxGradient(
+                    new Vector4(0,0,0,1), 
+                    new Vector4(1,1,1,1)
+                );
+                break;                                
         }
         Instantiate(ps, pos, rot);
     }
