@@ -1,3 +1,4 @@
+using System.Net.Sockets;
 using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,7 +48,15 @@ public class PlayerCollision : MonoBehaviour
             playerStatus.currentHP = playerStatus.maxHP;
             SoundManagerScript.playSound("scoreBallSound");
         }                
-        else if(score.tag == "red_ball" | score.tag == "Lava"){
+        else if(score.tag == "red_score"){
+            ScoreNum += 300;
+            MyscoreText.text = "Score : " + ScoreNum;
+            ExplodeScore("red",score.transform.position, score.transform.rotation);
+            Destroy(score.gameObject);            
+            playerStatus.currentHP = playerStatus.maxHP;
+            SoundManagerScript.playSound("scoreBallSound");
+        }                        
+        else if(score.tag == "spike_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
         }
         CameraShake.Instance.ShakeCamera(10f, .2f);
@@ -98,6 +107,13 @@ public class PlayerCollision : MonoBehaviour
                     new Vector4((float)123/255,(float)255/255,1,1)
                 );
                 break;
+
+            case "red":
+                ps_main.startColor = new ParticleSystem.MinMaxGradient(
+                    new Vector4(1,(float)73/255,(float)0/255,1), 
+                    new Vector4((float)255/255,(float)0/255,(float)170/255,1)
+                );
+                break;                
         }
         Instantiate(ps, pos, rot);
     }
