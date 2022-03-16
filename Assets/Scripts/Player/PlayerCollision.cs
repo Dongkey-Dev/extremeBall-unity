@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public int YScore=100;
+    public int OScore=300;
     public Text MyscoreText;
     private int ScoreNum;
     public ParticleSystem ps;
@@ -22,23 +24,35 @@ public class PlayerCollision : MonoBehaviour
         ps_main = ps.main;  
     }
 
-    private void OnTriggerEnter2D(Collider2D score)
+    private void chageScoreByCondition(Collider2D score)
     {
-        if(score.tag == "yellow_score"){
-            ScoreNum += 100;
+        
+        void chageScore(int s, string c, float chp){
+            ScoreNum += s;
             MyscoreText.text = "Score : " + ScoreNum;
-            ExplodeScore("yellow",score.transform.position, score.transform.rotation);
+            ExplodeScore(c, score.transform.position, score.transform.rotation);
             Destroy(score.gameObject);
-            playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
+            playerStatus.currentHP = chp;
             SoundManagerScript.playSound("scoreBallSound");
         }
+
+        if(score.tag == "yellow_score"){
+            chageScore(YScore, "yellow", Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP));
+            // ScoreNum += YScore;
+            // MyscoreText.text = "Score : " + ScoreNum;
+            // ExplodeScore("yellow",score.transform.position, score.transform.rotation);
+            // Destroy(score.gameObject);
+            // playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
+            // SoundManagerScript.playSound("scoreBallSound");
+        }
         else if(score.tag == "orange_score"){
-            ScoreNum += 300;
-            MyscoreText.text = "Score : " + ScoreNum;
-            ExplodeScore("orange", score.transform.position, score.transform.rotation);
-            Destroy(score.gameObject);            
-            playerStatus.currentHP = playerStatus.maxHP;
-            SoundManagerScript.playSound("scoreBallSound");
+            chageScore(OScore, "orange", playerStatus.maxHP);
+            // ScoreNum += OScore;
+            // MyscoreText.text = "Score : " + ScoreNum;
+            // ExplodeScore("orange", score.transform.position, score.transform.rotation);
+            // Destroy(score.gameObject);            
+            // playerStatus.currentHP = playerStatus.maxHP;
+            // SoundManagerScript.playSound("scoreBallSound");
         }        
         else if(score.tag == "purple_score"){
             ScoreNum += 300;
@@ -60,6 +74,11 @@ public class PlayerCollision : MonoBehaviour
             playerStatus.currentHP = 0.0f;
         }
         CameraShake.Instance.ShakeCamera(10f, .2f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D score)
+    {
+        chageScoreByCondition(score);
     }
 
     public Gradient getGradient(Color c1, Color c2)
@@ -87,6 +106,7 @@ public class PlayerCollision : MonoBehaviour
         ps_main.startSpeed = ShootToMouse.PlayerVelocity.magnitude;
         switch(color)
         {
+            // enum
             case "yellow":      
                 ps_main.startColor = new ParticleSystem.MinMaxGradient(
                     new Vector4(1,(float)246/255,(float)187/255,1), 
@@ -117,10 +137,10 @@ public class PlayerCollision : MonoBehaviour
 
             case "player":
                 ps_main.startColor = new ParticleSystem.MinMaxGradient(
-                    new Vector4(0,0,0,1), 
+                    new Vector4(0,0,0,1),
                     new Vector4(1,1,1,1)
                 );
-                break;                                
+                break;                    
         }
         Instantiate(ps, pos, rot);
     }
