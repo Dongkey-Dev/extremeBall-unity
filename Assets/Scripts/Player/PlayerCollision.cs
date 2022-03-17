@@ -9,6 +9,8 @@ public class PlayerCollision : MonoBehaviour
 {
     public int YScore=100;
     public int OScore=300;
+    public int PScore=300;
+    public int RScore=300;
     public Text MyscoreText;
     private int ScoreNum;
     public ParticleSystem ps;
@@ -38,37 +40,15 @@ public class PlayerCollision : MonoBehaviour
 
         if(score.tag == "yellow_score"){
             chageScore(YScore, "yellow", Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP));
-            // ScoreNum += YScore;
-            // MyscoreText.text = "Score : " + ScoreNum;
-            // ExplodeScore("yellow",score.transform.position, score.transform.rotation);
-            // Destroy(score.gameObject);
-            // playerStatus.currentHP = Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP);
-            // SoundManagerScript.playSound("scoreBallSound");
         }
         else if(score.tag == "orange_score"){
             chageScore(OScore, "orange", playerStatus.maxHP);
-            // ScoreNum += OScore;
-            // MyscoreText.text = "Score : " + ScoreNum;
-            // ExplodeScore("orange", score.transform.position, score.transform.rotation);
-            // Destroy(score.gameObject);            
-            // playerStatus.currentHP = playerStatus.maxHP;
-            // SoundManagerScript.playSound("scoreBallSound");
         }        
         else if(score.tag == "purple_score"){
-            ScoreNum += 300;
-            MyscoreText.text = "Score : " + ScoreNum;
-            ExplodeScore("purple",score.transform.position, score.transform.rotation);
-            Destroy(score.gameObject);            
-            playerStatus.currentHP = playerStatus.maxHP;
-            SoundManagerScript.playSound("scoreBallSound");
+            chageScore(PScore, "purple", playerStatus.maxHP);
         }                
         else if(score.tag == "red_score"){
-            ScoreNum += 300;
-            MyscoreText.text = "Score : " + ScoreNum;
-            ExplodeScore("red",score.transform.position, score.transform.rotation);
-            Destroy(score.gameObject);            
-            playerStatus.currentHP = playerStatus.maxHP;
-            SoundManagerScript.playSound("scoreBallSound");
+            chageScore(RScore, "red", playerStatus.maxHP);
         }                        
         else if(score.tag == "spike_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
@@ -80,26 +60,6 @@ public class PlayerCollision : MonoBehaviour
     {
         chageScoreByCondition(score);
     }
-
-    public Gradient getGradient(Color c1, Color c2)
-    {
-        Gradient gradient = new Gradient();
- 
-        GradientColorKey[] gradientColors = new GradientColorKey[2];
-        gradientColors[0].color = c1;
-        gradientColors[1].color = c2;
-        gradientColors[0].time = 0f;
-        gradientColors[1].time = 1f;
- 
-        GradientAlphaKey[] gradientAlpha = new GradientAlphaKey[2];
-        gradientAlpha[0].alpha = 1;
-        gradientAlpha[0].time = 0;
-        gradientAlpha[1].alpha = 1;
-        gradientAlpha[1].time = 1f ;
- 
-        gradient.SetKeys(gradientColors, gradientAlpha);
-        return gradient;
-    }    
 
     public void ExplodeScore(string color, Vector3 pos, Quaternion rot)
     {
