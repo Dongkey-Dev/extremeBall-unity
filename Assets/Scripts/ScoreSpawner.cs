@@ -7,7 +7,12 @@ public class ScoreSpawner : MonoBehaviour
     public int numberToSpawn;
     public List<GameObject> spawnPool;
     public GameObject quad;
-    // Start is called before the first frame update
+    private string yellow_score = "yellow_score";
+    private string orange_score = "orange_score";
+    private string red_score = "red_score";
+    private string purple_score = "purple_score";
+    private string spike_ball = "spike_ball";
+
     void Start()
     {
         spawnObjects();
@@ -33,8 +38,18 @@ public class ScoreSpawner : MonoBehaviour
     }
 
     private void DestroyObjects(){
-        foreach(GameObject o in GameObject.FindGameObjectsWithTag("Myscore")){
-            Destroy(o);
+        DestroyObjectsBall(new []{
+            yellow_score, 
+            orange_score, 
+            spike_ball, 
+            purple_score, 
+            red_score});
+    }
+    private void DestroyObjectsBall(string[] balls){
+        foreach(string ball in balls){
+            foreach(GameObject o in GameObject.FindGameObjectsWithTag(ball)){
+                Destroy(o);
+            }            
         }
-    }    
+    }
 }
