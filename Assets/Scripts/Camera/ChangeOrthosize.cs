@@ -7,14 +7,15 @@ public class ChangeOrthosize : MonoBehaviour
 {
     float PlayerMagnitude;
     public CinemachineVirtualCamera vcam;
+    int InitOrthographicSize = 12;
 
     void Start(){
-        vcam.m_Lens.OrthographicSize = 12;
+        vcam.m_Lens.OrthographicSize = InitOrthographicSize;
     }    
     void FixedUpdate(){
         if (!Input.GetMouseButton(0)){
             PlayerMagnitude = ShootToMouse.PlayerVelocity.magnitude;
-            if(PlayerMagnitude > 12){
+            if(PlayerMagnitude > InitOrthographicSize){
                 vcam.m_Lens.OrthographicSize = Mathf.Max(8, Mathf.Min(vcam.m_Lens.OrthographicSize+0.2f, 20));
             }
             else{
