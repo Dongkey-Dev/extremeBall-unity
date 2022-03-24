@@ -19,10 +19,10 @@ public class ChromaticController : MonoBehaviour
     void FixedUpdate()
     {
         if(Input.GetMouseButton(0)){
-            chromatic.intensity.value = .75f;
+            chromatic.intensity.value = .65f;
         }
         else{
-            chromatic.intensity.value = .35f;
+            chromatic.intensity.value = .30f;
         }
     }
 }
