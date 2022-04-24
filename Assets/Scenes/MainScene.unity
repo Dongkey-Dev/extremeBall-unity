@@ -358,7 +358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 303747340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b75335362c59411d8a6153f2908e95d, type: 3}
+  m_Script: {fileID: 11500000, guid: d1729347c983474439c71157a5a4fa21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberToSpawn: 1000
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 303747340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b75335362c59411d8a6153f2908e95d, type: 3}
+  m_Script: {fileID: 11500000, guid: d1729347c983474439c71157a5a4fa21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberToSpawn: 500
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 303747340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b75335362c59411d8a6153f2908e95d, type: 3}
+  m_Script: {fileID: 11500000, guid: d1729347c983474439c71157a5a4fa21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numberToSpawn: 1000
@@ -2204,8 +2204,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1279538662}
   - component: {fileID: 1279538665}
-  - component: {fileID: 1279538664}
   - component: {fileID: 1279538663}
+  - component: {fileID: 1279538666}
   m_Layer: 0
   m_Name: spike_ball
   m_TagString: spike_ball
@@ -2244,19 +2244,6 @@ CircleCollider2D:
   m_Offset: {x: -0.0000019073486, y: 0}
   serializedVersion: 2
   m_Radius: 1.3299999
---- !u!114 &1279538664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279538661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efdcc8c5977544220be8a211aba1a088, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 60
 --- !u!212 &1279538665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2309,6 +2296,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1279538666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279538661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb22d47e2b853c41bdafc1b7b24cc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreEffect: {fileID: 1570131237}
 --- !u!1 &1383032944
 GameObject:
   m_ObjectHideFlags: 0
