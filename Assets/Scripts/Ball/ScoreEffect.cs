@@ -9,7 +9,7 @@ public class ScoreEffect : MonoBehaviour
         if(player.tag == "Player")
         {
             Instantiate(scoreEffect, this.transform.position, this.transform.rotation);
-            Debug.Log(this.transform.position);
+            //Debug.Log(this.transform.position);
         }
     }
     void PlayEffect()
