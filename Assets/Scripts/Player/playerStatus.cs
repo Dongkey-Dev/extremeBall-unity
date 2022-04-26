@@ -14,11 +14,11 @@ public class playerStatus : MonoBehaviour
         currentHP = 200.0f;
     }
     void FixedUpdate(){
-        if(this.transform.position.x >= 1050 ){
-            this.transform.position = new Vector3(-1050,this.transform.position.y, this.transform.position.z);
-        } else if(this.transform.position.x <= -1050 ){
-            this.transform.position = new Vector3(1050,this.transform.position.y, this.transform.position.z);
-        }
+        // if(this.transform.position.x >= 1050 ){
+        //     this.transform.position = new Vector3(-1050,this.transform.position.y, this.transform.position.z);
+        // } else if(this.transform.position.x <= -1050 ){
+        //     this.transform.position = new Vector3(1050,this.transform.position.y, this.transform.position.z);
+        // }
         if(currentHP <= 0.0f){
             PlayerCollision playerCollision = this.gameObject.GetComponent<PlayerCollision>();
             playerCollision.ExplodeScore("player", this.transform.position, this.transform.rotation);

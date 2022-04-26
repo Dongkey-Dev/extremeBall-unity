@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-    public GameObject yellowBall, orangeBall, redBall, purpleBall, spikeBall;
-
+    public List<GameObject> spawnPool;
     private float distance;
     private float distanceUsed;
     private float rangeDist = 50;
@@ -30,11 +29,14 @@ public class BallSpawner : MonoBehaviour
 
     private void SpawnBall()
     {
-        GameObject ballToSpawn = yellowBall;
+        int randomItem;
+        randomItem = Random.Range(0, spawnPool.Count);
+        GameObject ballToSpawn = spawnPool[randomItem];
 
         float yPos = Mathf.Floor(
-            Mathf.Abs(UnityEngine.Random.Range(0f, 1f) - UnityEngine.Random.Range(0f, 1f)) * 
-            (1 + 100 - (-2)) + (-2)
+            Random.Range(transform.position.y + 30, transform.position.y - 30)
+            // Mathf.Abs(UnityEngine.Random.Range(0f, 1f) - UnityEngine.Random.Range(0f, 1f)) * 
+            // (1 + 100 - (-2)) + (-2)
             );
         Vector2 posToSpawnBall = new Vector2(distance, yPos);
 

@@ -13,6 +13,7 @@ TagManager:
   - Lava
   - purple_score
   - spike_ball
+  - Balls
   layers:
   - Default
   - TransparentFX
