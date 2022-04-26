@@ -46,7 +46,7 @@ Temporary Items
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
-ProjectSettings/ProjectSettings.asset
+ProjectSettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
