@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class ShootToMouse : MonoBehaviour
 {
+    public int maxSpeed = 300;
     float lastSpeed;
     public int force;
     public static Vector3 PlayerVelocity;
@@ -19,7 +20,7 @@ public class ShootToMouse : MonoBehaviour
             Vector3 dirToMouse = Input.mousePosition - posInScreen;
             float distance = Vector3.Distance(posInScreen, Input.mousePosition); 
             dirToMouse.Normalize();
-            distance = Mathf.Max(400, distance * force);
+            distance = Mathf.Max(maxSpeed, distance * force);
             GetComponent<Rigidbody2D>().AddForce(dirToMouse * distance);
             SoundManagerScript.playSound("playerJumpSound");
         }
@@ -34,12 +35,12 @@ public class ShootToMouse : MonoBehaviour
         else if(score.tag == "orange_score"){
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-100,100), 0)) * lastSpeed/3);
+            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-100,100), 0)) * Mathf.Min(maxSpeed ,lastSpeed/3));
         }
         else if(score.tag == "red_score"){
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-100,100), 0)) * (float)lastSpeed/1.5f);
+            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-100,100), 0)) * Mathf.Min(maxSpeed ,(float)lastSpeed/1.5f));
         }        
     }    
 }

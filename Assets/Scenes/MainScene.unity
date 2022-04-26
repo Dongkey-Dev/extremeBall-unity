@@ -1085,7 +1085,7 @@ GameObject:
   - component: {fileID: 586955234}
   - component: {fileID: 586955233}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: StartBallZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,8 +1163,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586955232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1233, y: 483.7794, z: 238}
-  m_LocalScale: {x: 1997.2985, y: 974.6588, z: 1}
+  m_LocalPosition: {x: -1.8855, y: 17.1334, z: 238}
+  m_LocalScale: {x: 33.775475, y: 39.305553, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1633,6 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8479bd9242474498b17d50b9a73624f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 300
   force: 0
 --- !u!50 &1004291985
 Rigidbody2D:
@@ -1868,6 +1869,7 @@ MonoBehaviour:
   - {fileID: 1383032944}
   - {fileID: 1689725713}
   - {fileID: 1071154599}
+  quad: {fileID: 586955232}
 --- !u!1 &1062403830
 GameObject:
   m_ObjectHideFlags: 0
@@ -7726,7 +7728,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7002457, y: 1}
+    m_SensorSize: {x: 1.6449631, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

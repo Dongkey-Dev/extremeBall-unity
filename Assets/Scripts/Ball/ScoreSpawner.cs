@@ -20,7 +20,7 @@ public class ScoreSpawner : MonoBehaviour
     public void spawnObjects(){
         int randomItem = 0;
         GameObject toSpawn;
-        MeshCollider c = quad.GetComponent<MeshCollider>();
+        MeshCollider mc = quad.GetComponent<MeshCollider>();
 
         float screenX, screenY;
         Vector2 pos;
@@ -29,8 +29,8 @@ public class ScoreSpawner : MonoBehaviour
             randomItem = Random.Range(0, spawnPool.Count);
             toSpawn = spawnPool[randomItem];
 
-            screenX = Random.Range(c.bounds.min.x, c.bounds.max.x);
-            screenY = Random.Range(c.bounds.min.y, c.bounds.max.y);
+            screenX = Random.Range(mc.bounds.min.x, mc.bounds.max.x);
+            screenY = Random.Range(mc.bounds.min.y, mc.bounds.max.y);
             pos = new Vector2(screenX, screenY);
 
             Instantiate(toSpawn, pos, toSpawn.transform.rotation);
