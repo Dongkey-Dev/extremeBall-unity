@@ -26,10 +26,10 @@ public class PlayerCollision : MonoBehaviour
         ps_main = ps.main;  
     }
 
-    private void chageScoreByCondition(Collider2D score)
+    private void changeScoreByCondition(Collider2D score)
     {
         
-        void chageScore(int s, string c, float chp){
+        void changeScore(int s, string c, float chp){
             ScoreNum += s;
             MyscoreText.text = "Score : " + ScoreNum;
             ExplodeScore(c, score.transform.position, score.transform.rotation);
@@ -39,16 +39,16 @@ public class PlayerCollision : MonoBehaviour
         }
 
         if(score.tag == "yellow_score"){
-            chageScore(YScore, "yellow", Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP));
+            changeScore(YScore, "yellow", Mathf.Min(playerStatus.currentHP+50, playerStatus.maxHP));
         }
         else if(score.tag == "orange_score"){
-            chageScore(OScore, "orange", playerStatus.maxHP);
+            changeScore(OScore, "orange", playerStatus.maxHP);
         }        
         else if(score.tag == "purple_score"){
-            chageScore(PScore, "purple", playerStatus.maxHP);
+            changeScore(PScore, "purple", playerStatus.maxHP);
         }                
         else if(score.tag == "red_score"){
-            chageScore(RScore, "red", playerStatus.maxHP);
+            changeScore(RScore, "red", playerStatus.maxHP);
         }                        
         else if(score.tag == "spike_ball" | score.tag == "Lava"){
             playerStatus.currentHP = 0.0f;
@@ -58,7 +58,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D score)
     {
-        chageScoreByCondition(score);
+        changeScoreByCondition(score);
     }
 
     public void ExplodeScore(string color, Vector3 pos, Quaternion rot)
