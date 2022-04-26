@@ -34,12 +34,12 @@ public class ShootToMouse : MonoBehaviour
         else if(score.tag == "orange_score"){
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-300,300), 0)) * lastSpeed/2);
+            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-100,100), 0)) * lastSpeed/3);
         }
         else if(score.tag == "red_score"){
             lastSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-300,300), 0)) * (float)lastSpeed/1.5f);
+            GetComponent<Rigidbody2D>().AddForce((new Vector3(Random.Range(-300,300), Random.Range(-100,100), 0)) * (float)lastSpeed/1.5f);
         }        
     }    
 }
